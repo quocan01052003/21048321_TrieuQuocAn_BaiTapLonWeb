@@ -3,33 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chi Tiết Xe Máy</title>
+  <title>Xe Máy Nổi Bật</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <div class="container">
-      <h1>🏍️ Chi Tiết Xe Máy</h1>
+      <h1>Phụ kiện</h1>
       <nav>
         <a href="index.html">Trang chủ</a>
         <a href="motorcycles.html">Xe máy</a>
-        <a href="#">Phụ kiện</a>
-        <a href="#">Liên hệ</a>
+        <a href="phukien.html">Phụ kiện</a>
+        <a href="cart.html">Giỏ hàng</a>
       </nav>
     </div>
   </header>
-  <section class="product-detail">
-    <div class="container" id="product-detail">
-      <!-- Thông tin chi tiết sản phẩm sẽ được render bằng JS -->
+
+  <section class="products">
+    <div class="container">
+      <h3>Phụ kiện</h3>
+      <div class="product-list" id="motorcycle-list">
+        <!-- Danh sách xe sẽ được render bằng JS -->
+         
+      </div>
+
+      <div class="product-list" id="accessory-list">
+        <!-- Danh sách phụ kiện sẽ được render bằng JS -->
+      </div>
     </div>
   </section>
-
   <footer>
     <div class="container">
-      <p>&copy; 2025 Xe Máy. All rights reserved.</p>
+      <p>&copy; 2025 Xe Máy & Phụ Kiện. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="phukien.js"></script>
+  
 </body>
 </html>

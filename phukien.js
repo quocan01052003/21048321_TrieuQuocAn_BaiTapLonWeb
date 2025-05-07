@@ -2,43 +2,35 @@
 // Dữ liệu sản phẩm mẫu
 const motorcycles = [
     {
-      name: "Honda Winner X",
-      price: 46000000,
-      image: "images/winnerx.png"
-    },
-    {
-      name: "Yamaha NVX",
-      price: 52000000,
-      image: "images/nvx.png"
-    },
-    {
-        id: 1,
-        name: "Air Blade 160",
-        price: 46000000,
-        description: "Xe tay côn thể thao, thiết kế mạnh mẽ.",
-        image: "images/ab.png"
-    },
-    {
-        id: 2,
-        name: "Wave 110",
-        price: 52000000,
-        description: "Xe tay ga thể thao, thiết kế hiện đại và năng động.",
-        image: "images/wave.png"
+        name: "Nhớt Castrol Power 1",
+        price: 150000,
+        image: "images/nhot.png",
       },
       {
-        id: 3,
-        name: "Suzuki GSX-S150",
-        price: 47000000,
-        description: "Xe phân khối nhỏ, lý tưởng cho di chuyển trong thành phố.",
-        image: "images/suzuki.png",
+        name: "Găng tay xe máy",
+        price: 350000,
+        image: "images/gangtay.png",
       },
       {
-        id: 4,
-        name: "Honda SH 125i",
-        price: 70000000,
-        description: "Xe tay ga sang trọng, thích hợp cho người đi làm và đi chơi.",
-        image: "images/sh125.png",
-      }
+        name: "Kính chiếu hậu",
+        price: 500000,
+        image: "images/kinhchieuhau.png",
+      },
+      {
+        name: "Lốp xe",
+        price: 1200000,
+        image: "images/lop1.png",
+      },
+      {
+        name: "Ruột xe máy",
+        price: 350000,
+        image: "images/ruot.png",
+      },
+      {
+        name: "Kính xe",
+        price: 500000,
+        image: "images/kinhchieuhau.png",
+      },
   ];
   const accessories = [
     {
