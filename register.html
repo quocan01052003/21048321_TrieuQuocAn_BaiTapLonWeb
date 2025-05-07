@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng ký</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Đăng ký tài khoản</h2>
+    <input type="text" id="regUsername" placeholder="Tên đăng nhập">
+    <input type="password" id="regPassword" placeholder="Mật khẩu">
+    <button onclick="register()">Đăng ký</button>
+    <p>Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+  </div>
+  <script>
+    function register() {
+      const user = document.getElementById("regUsername").value;
+      const pass = document.getElementById("regPassword").value;
+      if (user && pass) {
+        localStorage.setItem("user", user);
+        localStorage.setItem("pass", pass);
+        alert("Đăng ký thành công! Chuyển sang đăng nhập.");
+        window.location.href = "login.html";
+      } else {
+        alert("Vui lòng nhập đầy đủ thông tin!");
+      }
+    }
+  </script>
+</body>
+</html>

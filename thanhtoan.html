@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thanh toán</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .checkout-item {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+    .checkout-item img {
+      width: 80px;
+      height: auto;
+    }
+    .checkout-info {
+      flex: 1;
+      margin-left: 20px;
+    }
+    .checkout-total {
+      text-align: right;
+      font-weight: bold;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+    .form-group {
+      margin: 10px 0;
+    }
+    label {
+      display: block;
+      margin-bottom: 4px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+    }
+    .confirm-btn {
+      display: block;
+      margin-top: 30px;
+      padding: 12px;
+      background-color: #28a745;
+      color: white;
+      text-align: center;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💳 Trang thanh toán</h1>
+
+  <div id="checkout-container"></div>
+  <div id="checkout-total" class="checkout-total"></div>
+
+  <h2>🧾 Thông tin khách hàng</h2>
+  <div class="form-group">
+    <label for="fullname">Họ và tên:</label>
+    <input type="text" id="fullname" required>
+  </div>
+  <div class="form-group">
+    <label for="phone">Số điện thoại:</label>
+    <input type="tel" id="phone" required>
+  </div>
+  <div class="form-group">
+    <label for="address">Địa chỉ giao hàng:</label>
+    <textarea id="address" rows="3" required></textarea>
+  </div>
+  <div class="form-group">
+    <label for="payment-method">Hình thức thanh toán:</label>
+    <select id="payment-method">
+      <option value="cod">Thanh toán khi nhận hàng (COD)</option>
+      <option value="bank">Chuyển khoản ngân hàng</option>
+      <option value="momo">Ví MoMo</option>
+    </select>
+  </div>
+
+  <button class="confirm-btn" onclick="confirmCheckout()">✅ Xác nhận thanh toán</button>
+
+  <script src="checkout.js"></script>
+</body>
+</html>

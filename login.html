@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng nhập</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Đăng nhập</h2>
+    <input type="text" id="loginUsername" placeholder="Tên đăng nhập">
+    <input type="password" id="loginPassword" placeholder="Mật khẩu">
+    <button onclick="login()">Đăng nhập</button>
+    <p>Chưa có tài khoản? <a href="register.html">Đăng ký</a></p>
+  </div>
+  <script>
+    function login() {
+      const inputUser = document.getElementById("loginUsername").value;
+      const inputPass = document.getElementById("loginPassword").value;
+      const storedUser = localStorage.getItem("user");
+      const storedPass = localStorage.getItem("pass");
+      if (inputUser === storedUser && inputPass === storedPass) {
+        alert("Đăng nhập thành công!");
+        window.location.href = "index.html"; // chuyển về trang chủ
+      } else {
+        alert("Sai tài khoản hoặc mật khẩu!");
+      }
+    }
+  </script>
+</body>
+</html>

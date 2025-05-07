@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Giỏ hàng</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="cart-container">
+    <h1>🛒 Giỏ hàng của bạn</h1>
+
+    <div class="cart-items" id="cart-items">
+      <!-- Sản phẩm sẽ được thêm ở đây -->
+    </div>
+
+    <div class="cart-summary">
+      <h2>Tổng tiền: <span id="total">0</span> VND</h2>
+      <div class="cart-actions">
+        <button onclick="clearCart()">🗑️ Xoá toàn bộ</button>
+        <a href="index.html" class="btn-continue">← Tiếp tục mua sắm</a>
+        <a href="thanhtoan.html" class="btn-continue">Thanh toán</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function renderCart() {
+      const cartDiv = document.getElementById("cart-items");
+      const totalDiv = document.getElementById("total");
+      cartDiv.innerHTML = "";
+      let total = 0;
+
+      if (cart.length === 0) {
+        cartDiv.innerHTML = "<p>🛍️ Giỏ hàng đang trống.</p>";
+        totalDiv.textContent = "0";
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        const div = document.createElement("div");
+        div.className = "cart-item";
+        div.innerHTML = `
+          <img src="${item.image || 'images/default.jpg'}" alt="${item.name}">
+          <div class="item-info">
+            <h3>${item.name}</h3>
+            <p>Giá: ${item.price.toLocaleString()} VND</p>
+            <button onclick="removeItem(${index})">Xoá</button>
+          </div>
+        `;
+        cartDiv.appendChild(div);
+        total += item.price;
+      });
+
+      totalDiv.textContent = total.toLocaleString();
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    function clearCart() {
+      if (confirm("Bạn muốn xoá toàn bộ giỏ hàng?")) {
+        cart = [];
+        localStorage.removeItem("cart");
+        renderCart();
+      }
+    }
+    renderCart();
+  </script>
+</body>
+</html>
